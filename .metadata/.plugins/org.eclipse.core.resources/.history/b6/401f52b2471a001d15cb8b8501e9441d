@@ -1,0 +1,50 @@
+//lex_auth_012889847657455616104
+//do not modify the above line
+
+package hashmapexercise1;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Student {
+	
+	public static Map<String, Double> findMaxMinScorers(Map<String, Double> studentMarks) {
+		Map<String, Double> students= new HashMap<String, Double>();
+		
+		Double menor = null;
+		Double maior = null;
+		Double valor = null;
+		
+		for (Entry<String, Double> entry : studentMarks.entrySet()) {
+			
+			valor =  entry.getValue();
+			
+			if(maior == null && menor == null ){
+				
+				menor = valor;
+				maior = valor;
+			}
+			else if( valor < menor  ) {
+				students.put(entry.getKey(), entry.getValue());
+				menor = entry.getValue();
+				
+			}
+			else if(valor > maior) {
+				maior = entry.getValue();
+				
+			}
+			else if (valor < menor && valor < maior){
+				System.out.println("erro");
+			}
+			
+			
+		}
+		System.out.println(maior);
+		System.out.println(menor);
+		
+		students.put(null, valor);
+		
+		return null;
+	}
+}

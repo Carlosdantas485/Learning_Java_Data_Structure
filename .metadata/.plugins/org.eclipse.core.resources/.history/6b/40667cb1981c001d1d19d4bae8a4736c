@@ -1,0 +1,208 @@
+//lex_auth_012990565827108864230
+//do not modify the above line
+
+package queueinterfaceassignment1;
+
+import java.util.ArrayDeque;
+import java.util.Collection;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Tester {
+	
+	public static List<Deque<Patient>> splitQueue(Deque<Patient> patientsQueue) {
+		
+		List<Deque<Patient>> peoples = new List<Deque<Patient>>() {
+			
+			@Override
+			public <T> T[] toArray(T[] a) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public Object[] toArray() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public List<Deque<Patient>> subList(int fromIndex, int toIndex) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public int size() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			@Override
+			public Deque<Patient> set(int index, Deque<Patient> element) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public boolean retainAll(Collection<?> c) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public boolean removeAll(Collection<?> c) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public Deque<Patient> remove(int index) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public boolean remove(Object o) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public ListIterator<Deque<Patient>> listIterator(int index) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public ListIterator<Deque<Patient>> listIterator() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public int lastIndexOf(Object o) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			@Override
+			public Iterator<Deque<Patient>> iterator() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public boolean isEmpty() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public int indexOf(Object o) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			@Override
+			public Deque<Patient> get(int index) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public boolean containsAll(Collection<?> c) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public boolean contains(Object o) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public void clear() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public boolean addAll(int index, Collection<? extends Deque<Patient>> c) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public boolean addAll(Collection<? extends Deque<Patient>> c) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			@Override
+			public void add(int index, Deque<Patient> element) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public boolean add(Deque<Patient> e) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+		};
+		Deque<Patient> l1 = new ArrayDeque<Patient>();
+		Deque<Patient> l2 = new ArrayDeque<Patient>();
+		
+		for(Patient peolpe : patientsQueue) {
+			int age = peolpe.getAge();
+			
+			if (age > 60) {
+				l1.add(peolpe);
+			}else {
+				l2.add(peolpe);
+			}
+			
+		}
+		
+		
+		peoples.add( l1);
+		peoples.add(l2);
+		
+		
+		return peoples;
+	}
+	
+	public static void main(String[] args) {
+		
+		Patient patient1 = new Patient("Jack","Male",25);
+		Patient patient2 = new Patient("Tom","Male",64);
+		Patient patient3 = new Patient("Simona","Female",24);
+		
+		Deque<Patient> patientsQueue = new ArrayDeque<Patient>();
+		patientsQueue.add(patient1);
+		patientsQueue.add(patient2);
+		patientsQueue.add(patient3);
+		
+		List<Deque<Patient>> queuesList = splitQueue(patientsQueue);
+	
+		int counter=0;
+		for (Deque<Patient> queue : queuesList) {
+			if(counter==0)
+				System.out.println("Patients in the senior queue\n============================");
+			else
+				System.out.println("Patients in the normal queue\n============================");
+			
+			for (Patient patient : queue) {
+				System.out.println("Name : "+patient.getName());
+				System.out.println("Age : "+patient.getAge());
+				System.out.println();
+			}
+			counter++;
+		}	
+	}
+	
+}

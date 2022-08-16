@@ -1,0 +1,18 @@
+//lex_auth_012889847657455616104
+//do not modify the above line
+
+package hashmapexercise1;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Tester {
+	public static void main(String args[]) {
+		float pi =(float) 3.14;
+		float area = pi * 4 * 4 ;
+		
+		System.out.println(area);
+		
+	}
+}

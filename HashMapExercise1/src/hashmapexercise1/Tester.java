@@ -1,0 +1,20 @@
+//lex_auth_012889847657455616104
+//do not modify the above line
+
+package hashmapexercise1;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Tester {
+	public static void main(String args[]) {
+		float f = 50;
+		float c = 0;
+		
+		c = ((f-32)/9)*5;
+		
+		System.out.println(c);
+		
+	}
+}
