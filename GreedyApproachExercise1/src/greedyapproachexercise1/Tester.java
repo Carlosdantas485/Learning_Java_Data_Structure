@@ -10,7 +10,7 @@ public class Tester {
         int tempStart = start[1] ;
         int tempEnd = finish[0];
         
-        
+
 		for(int i = 0; i < start.length; i++) {
 			
 			
@@ -20,8 +20,6 @@ public class Tester {
 				tempEnd = finish[i];
 			}
 			
-			
-	
 		}
 		
 		return cont;
