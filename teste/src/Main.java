@@ -1,18 +1,29 @@
 public class Main {
 	
-	public static int[] getMaxMin(int arr[], int low, int high) { 
-	    //Implement your logic here and change the return statement accordingly
-	    return null;
-	}
-	
-	public static void main(String[] args) {
-		int arr[] = {1000, 10, 5, 1, 2000}; 
-
-	    int[] maxMin = getMaxMin(arr, 0, arr.length - 1);
+	 public static int fibonacci(int num) {
+		//Declare an array to store Fibonacci numbers
+	        int f[] = new int[num + 1]; 
+	        int index; 
+	  
+	        //0th and 1st number of the series are 0 and 1
+	        f[0] = 0; 
+	  
+	        if (num > 0) { 
+	            f[1] = 1; 
+	  
+	            for (index = 2; index <= num; index++) { 
+	                //Add the previous 2 numbers in the series and store the sum
+	                f[index] = f[index - 1] + f[index - 2]; 
+	                System.out.println(f[index]);
+	            } 
+	        } 
+	  
+	        return f[num]; 
+		 } 
 	    
-	      System.out.println("Minimum value is "+ maxMin[1]); 
-	 	  System.out.println("Maximum value is "+ maxMin[0]);
-	}
+		public static void main(String[] args) { 
+			int num = 9; 
+			System.out.println(num+"th fibonacci number : "+fibonacci(num)); 
+	    }
 }
 
-// saida [2000, 1]
