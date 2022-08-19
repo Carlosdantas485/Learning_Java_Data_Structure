@@ -1,60 +1,32 @@
 
 public class Main {
 
-	public static void resetMatrix(int[][] mat) {
-		for (int i = 0; i < mat.length; i++) {
-			for (int j = 0; j < mat[0].length; j++) {
-				if (mat[i][j] != 0) {
-					mat[i][j] = 1;
-				}
-			}
-		}
-	}
-
-	public static int findMaxRectArea(int[][] mat) {
-
-		if (mat == null || mat.length == 0) {
-			return 0;
-		}
-
-		int M = mat.length;
-		int N = mat[0].length;
-
-		for (int j = 0; j < N; j++) {
-			for (int i = M - 2; i >= 0; i--) {
-				if (mat[i][j] == 1) {
-					mat[i][j] = mat[i + 1][j] + 1;
-				}
-			}
-		}
-
-		int maxArea = 0;
-
-		for (int i = 0; i < M; i++) {
-			int[] count = new int[M + 1];
-
-			for (int j = 0; j < N; j++) {
-				if (mat[i][j] > 0) {
-					count[mat[i][j]] += 1;
-
-					maxArea = Integer.max(maxArea, mat[i][j] * count[mat[i][j]]);
-				}
-			}
-		}
-
-		resetMatrix(mat);
-		return maxArea;
-	}
-
 	public static void main(String[] args) {
-		int[][] mat = { 
-				{ 1, 0, 1, 0, 0 },
-				{ 1, 0, 1, 1, 1 },
-				{ 1, 1, 1, 1, 1 },
-				{ 1, 0, 0, 1, 0 }	
-		};
+	
 
-		System.out.println("Retangula com a maior area" + findMaxRectArea(mat));
+		int nota1 = 1;
+		int nota2 = 5;
+		int result = 0;
+		
+		int real1 = 0;
+		int real5 = 0;
+		
+		int value = 21;
+
+		for(int i = 0; i < value; i++) {
+			if(nota2 + result <= value ) {
+				result+=nota2;
+				real1++;
+				
+			}else {
+				real5++;
+				result+=nota1;
+			}
+		}
+		
+		System.out.println(real1);
+		System.out.println(real5);
+	
 	}
 
 }
